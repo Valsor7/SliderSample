@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Slider</string>
+    <string name="boost_solution">Boost Solution</string>
+    <string name="zoom_slide">zoom slide</string>
+    <string name="_3d_slide">3D slide</string>
+    <string name="position">position</string>
+    <string name="drawable_res">drawable</string>
+</resources>
