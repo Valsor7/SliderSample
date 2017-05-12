@@ -1,23 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-    <com.boost.slidersample.VerticalViewPager
+    <com.boost.slidersample.EndlessViewPager
         android:id="@+id/vp_vertical_card_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:overScrollMode="never" />
-
-    <me.relex.circleindicator.CircleIndicator
-        android:visibility="gone"
-        android:id="@+id/ci_vertical_page"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        app:ci_orientation="vertical"
-        app:ci_drawable="@drawable/circle_selected_indicator"
-        android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true"
-
-        />
+        android:layout_height="match_parent" />
 </RelativeLayout>

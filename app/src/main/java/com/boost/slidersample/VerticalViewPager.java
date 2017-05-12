@@ -3,6 +3,7 @@ package com.boost.slidersample;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -11,7 +12,7 @@ import android.view.View;
  */
 
 public class VerticalViewPager extends ViewPager {
-
+    private static final String TAG = "VerticalViewPager";
     public VerticalViewPager(Context context) {
         super(context);
         init();
@@ -33,7 +34,6 @@ public class VerticalViewPager extends ViewPager {
 
         @Override
         public void transformPage(View view, float position) {
-
             if (position < -1) { // [-Infinity,-1)
                 // This page is way off-screen to the left.
                 view.setAlpha(0);
