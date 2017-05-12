@@ -10,6 +10,7 @@
         android:overScrollMode="never" />
 
     <me.relex.circleindicator.CircleIndicator
+        android:visibility="gone"
         android:id="@+id/ci_vertical_page"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
