@@ -68,7 +68,7 @@ public class SliderActivity extends AppCompatActivity {
             public void onItemSelected(View v) {
                 int selectedPos = mRvMenu.getChildAdapterPosition(v) + 1;
                 int realPos = mSlidesAdapter.getCurrentPosition();
-                int fakePos = (realPos % mSlidesAdapter.getItemCount()) + 1;
+                int fakePos = (realPos % MyAdapter.ITEMS_AMOUNT) + 1;
                 if (selectedPos < fakePos){
                     int posDifference = fakePos - selectedPos;
                     mRvSlides.scrollToPosition(realPos - posDifference);
