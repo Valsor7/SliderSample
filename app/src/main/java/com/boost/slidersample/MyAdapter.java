@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private static final String TAG = "MyAdapter";
-
+    public static  int ITEMS_AMOUNT = 5;
 
 
     private int mCurrentPosition;
@@ -28,7 +28,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: " + position);
         mCurrentPosition = position;
-        holder.bind((position % 5) + 1);
+        holder.bind((position % ITEMS_AMOUNT) + 1);
     }
 
     @Override
@@ -56,7 +56,6 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public void bind(int position){
             mCurrentPos = position;
             String fileName = "screen"+position;
-//            Log.d(TAG, "bind: " + fileName);
             int resId = itemView.getResources().getIdentifier(fileName, mContext.getString(R.string.drawable_res), itemView.getContext().getPackageName());
             Glide.with(itemView.getContext()).load(resId).into(mImage);
         }
