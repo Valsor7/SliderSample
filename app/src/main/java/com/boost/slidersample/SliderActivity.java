@@ -12,6 +12,7 @@ import android.transition.Slide;
 import android.transition.TransitionManager;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
@@ -27,7 +28,6 @@ public class SliderActivity extends AppCompatActivity {
     MyRecyclerView mRvSlides;
     private RelativeLayout mMainLayout;
     private RecyclerView mRvMenu;
-    private FloatingActionButton mFabMenu;
     private MyAdapter mSlidesAdapter;
 
     @Override
@@ -44,8 +44,8 @@ public class SliderActivity extends AppCompatActivity {
         snapHelper.attachToRecyclerView(mRvSlides);
         mMainLayout = (RelativeLayout) findViewById(R.id.main_container);
         mRvMenu = (RecyclerView) findViewById(R.id.rv_menu);
-        mFabMenu = (FloatingActionButton) findViewById(R.id.fab_menu);
-        mFabMenu.setOnClickListener(new View.OnClickListener() {
+
+        findViewById(R.id.iv_open_menu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Slide slide = new Slide();
