@@ -14,6 +14,9 @@ import com.bumptech.glide.Glide;
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private static final String TAG = "MyAdapter";
 
+
+
+    private int mCurrentPosition;
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -23,12 +26,14 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.bind(position + 1);
+        Log.d(TAG, "onBindViewHolder: " + position);
+        mCurrentPosition = position;
+        holder.bind((position % 5) + 1);
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return Integer.MAX_VALUE;
     }
 
     static final class MyViewHolder extends RecyclerView.ViewHolder {
@@ -50,10 +55,18 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         public void bind(int position){
             mCurrentPos = position;
-            String fileName = "p"+position;
-            Log.d(TAG, "bind: " + fileName);
+            String fileName = "screen"+position;
+//            Log.d(TAG, "bind: " + fileName);
             int resId = itemView.getResources().getIdentifier(fileName, mContext.getString(R.string.drawable_res), itemView.getContext().getPackageName());
             Glide.with(itemView.getContext()).load(resId).into(mImage);
         }
+    }
+
+    public int getCurrentPosition() {
+        return mCurrentPosition;
+    }
+
+    public void setCurrentPosition(int currentPosition) {
+        this.mCurrentPosition = currentPosition;
     }
 }

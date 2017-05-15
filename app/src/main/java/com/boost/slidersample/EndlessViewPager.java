@@ -6,10 +6,12 @@ package com.boost.slidersample;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 
-public class EndlessViewPager extends VerticalViewPager {
-
+public class EndlessViewPager extends ViewPager {
+    private static final String TAG = "EndlessViewPager";
     public EndlessViewPager(Context context) {
         super(context);
     }
@@ -33,12 +35,15 @@ public class EndlessViewPager extends VerticalViewPager {
 
     @Override
     public void setCurrentItem(int item, boolean smoothScroll) {
+        Log.d(TAG, "setCurrentItem() called with: item = [" + item + "], smoothScroll = [" + smoothScroll + "]");
         if (getAdapter().getCount() == 0) {
             super.setCurrentItem(item, smoothScroll);
             return;
         }
         item = getOffsetAmount() + (item % getAdapter().getCount());
+        Log.d(TAG, "setCurrentItem: calculated " + item);
         super.setCurrentItem(item, smoothScroll);
+        Log.d(TAG, "setCurrentItem: after");
     }
 
     @Override

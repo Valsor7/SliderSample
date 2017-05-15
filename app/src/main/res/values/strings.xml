@@ -5,4 +5,12 @@
     <string name="_3d_slide">3D slide</string>
     <string name="position">position</string>
     <string name="drawable_res">drawable</string>
+
+    <string-array name="menu">
+        <item name="item_0">RESIDENCE</item>
+        <item name="item_1">NEIGHBORHOOD</item>
+        <item name="item_2">PHOTOS</item>
+        <item name="item_3">FEATURES</item>
+        <item name="item_4">CONTACT</item>
+    </string-array>
 </resources>

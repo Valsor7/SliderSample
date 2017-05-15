@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
  * Created by yaroslav on 08.05.17.
  */
 
-public class FragmentCoverFlowPagerAdapter extends FragmentPagerAdapter {
+public class FragmentCoverFlowPagerAdapter extends FragmentStatePagerAdapter {
     private static final int FRAGMENTS_AMOUNT = 5;
 
     public FragmentCoverFlowPagerAdapter(FragmentManager fm) {

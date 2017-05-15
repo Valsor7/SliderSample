@@ -19,18 +19,24 @@
         <activity
             android:name=".SliderActivity"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Slider3DActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity android:name=".VerticalSliderActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
     </application>
 
