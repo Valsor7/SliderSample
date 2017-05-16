@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +27,7 @@ import java.util.List;
 
 public class SliderActivity extends AppCompatActivity {
     private static final String TAG = "SliderActivity";
-    MyRecyclerView mRvSlides;
+    RecyclerViewPager mRvSlides;
     private RelativeLayout mMainLayout;
     private RecyclerView mRvMenu;
     private MyAdapter mSlidesAdapter;
@@ -34,23 +36,23 @@ public class SliderActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider);
-        mRvSlides = (MyRecyclerView) findViewById(R.id.rv_slider_vertical);
+        mRvSlides = (RecyclerViewPager) findViewById(R.id.rv_slider_vertical);
         mSlidesAdapter = new MyAdapter();
         mRvSlides.setAdapter(mSlidesAdapter);
         mRvSlides.setLayoutManager(new LinearLayoutManager(this));
 
         mRvSlides.getLayoutManager().scrollToPosition(Integer.MAX_VALUE / 2);
-        SnapHelper snapHelper = new LinearSnapHelper();
-        snapHelper.attachToRecyclerView(mRvSlides);
+//        SnapHelper snapHelper = new LinearSnapHelper();
+//        snapHelper.attachToRecyclerView(mRvSlides);
         mMainLayout = (RelativeLayout) findViewById(R.id.main_container);
         mRvMenu = (RecyclerView) findViewById(R.id.rv_menu);
 
-        findViewById(R.id.iv_open_menu).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.fab_open_menu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Slide slide = new Slide();
-                slide.setSlideEdge(Gravity.BOTTOM);
-                TransitionManager.beginDelayedTransition(mMainLayout, slide);
+//                Slide slide = new Slide();
+//                slide.setSlideEdge(Gravity.BOTTOM);
+//                TransitionManager.beginDelayedTransition(mMainLayout, slide);
                 animateMenuAppearance(mRvMenu);
             }
         });

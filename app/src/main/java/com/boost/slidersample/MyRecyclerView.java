@@ -4,13 +4,13 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.util.Log;
 
 /**
  * Created by yaroslav on 15.05.17.
  */
 
 public class MyRecyclerView extends RecyclerView {
+    private static final String TAG = "MyRecyclerView";
     public MyRecyclerView(Context context) {
         super(context);
     }
@@ -25,6 +25,7 @@ public class MyRecyclerView extends RecyclerView {
 
     @Override
     public boolean fling(int velocityX, int velocityY) {
-        return super.fling(velocityX, 0);
+        int height = getHeight() * 3;
+        return super.fling(velocityX, velocityY > 0 ? height : -height);
     }
 }

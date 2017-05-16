@@ -5,29 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.boost.slidersample.MyRecyclerView
+    <com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager
         android:id="@+id/rv_slider_vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <ImageView
-        android:id="@+id/iv_open_menu"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_open_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="15dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/plus" />
+        android:src="@drawable/ic_add" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_menu"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_above="@id/iv_open_menu"
+        android:layout_above="@id/fab_open_menu"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
         android:background="@android:color/white"
         android:visibility="gone" />
-
 </RelativeLayout>
